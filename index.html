@@ -162,6 +162,17 @@
     transition: transform .35s cubic-bezier(.34,1.56,.64,1);
   }
   .sticker:hover{ transform: scale(1.03); }
+  .hero a,
+  .contact-line a,
+  .footer-links a{
+    display: inline-block;
+    transition: transform .25s cubic-bezier(.34,1.56,.64,1), color .2s ease, text-decoration-color .2s ease;
+  }
+  .hero a:hover,
+  .contact-line a:hover,
+  .footer-links a:hover{
+    transform: scale(1.08);
+  }
   .sticker svg{ width:115%; display:block; }
   .sticker img{ width:100%; height:100%; object-fit: cover; display:block; }
 
