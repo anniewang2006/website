@@ -170,13 +170,20 @@
     color: var(--muted);
     text-align:center;
   }
-  .ec-group{ margin-bottom: 32px; }
+  .ec-group{ margin-bottom: 32px; text-align: center; }
   .ec-group:last-child{ margin-bottom: 0; }
   .ec-label{
     font-family:'Fraunces', serif;
     font-weight: 500;
     font-size: 18px;
     margin: 0 0 12px;
+    text-align: center;
+  }
+  .ec-caption{
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
   }
 
   footer{ padding: 40px 0 60px; border-top: 1px solid var(--line); }
@@ -250,23 +257,38 @@
 
   <section id="hobbies">
     <h2>Extracurriculars</h2>
+    <p>Write a line or two here about your first hobby — how you got into it, what you like about it.</p>
+
     <div class="ec-group">
       <h3 class="ec-label">SASE</h3>
       <div class="photo-grid">
-        <div class="photo-item">
-          <div class="photo-placeholder">photo</div>
-          <p class="photo-caption">Caption goes here</p>
-        </div>
-        <div class="photo-item">
-          <div class="photo-placeholder">photo</div>
-          <p class="photo-caption">Caption goes here</p>
-        </div>
-        <div class="photo-item">
-          <div class="photo-placeholder">photo</div>
-          <p class="photo-caption">Caption goes here</p>
-        </div>
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
       </div>
+      <p class="ec-caption">Describe these SASE photos here</p>
     </div>
+
+    <div class="ec-group">
+      <h3 class="ec-label">Tennis</h3>
+      <div class="photo-grid">
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
+      </div>
+      <p class="ec-caption">Describe these Tennis photos here</p>
+    </div>
+
+    <div class="ec-group">
+      <h3 class="ec-label">Photos</h3>
+      <div class="photo-grid">
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
+        <div class="photo-placeholder">photo</div>
+      </div>
+      <p class="ec-caption">Describe these photography shots here</p>
+    </div>
+  </section>
 
     <div class="ec-group">
       <h3 class="ec-label">Tennis</h3>
