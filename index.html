@@ -149,27 +149,20 @@
     margin-top: 26px;
   }
   .photo-placeholder{
-    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: 100%;
     background: var(--paper);
-    border: 2px solid var(--ink);
-    border-radius: 6px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     color: var(--muted);
     font-family:'IBM Plex Mono', monospace;
     font-size: 12px;
-    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
   .photo-placeholder img{
     width:100%; height:100%; object-fit: cover; display:block;
   }
-  .photo-caption{
-    margin: 8px 0 0;
-    font-size: 13px;
-    color: var(--muted);
-    text-align:center;
-  }
+
   .ec-group{ margin-bottom: 32px; text-align: center; }
   .ec-group:last-child{ margin-bottom: 0; }
   .ec-label{
@@ -184,6 +177,37 @@
     font-size: 14px;
     color: var(--muted);
     text-align: center;
+  }
+
+  /* ---------- flip cards ---------- */
+  .flip-card{ perspective: 1000px; cursor: pointer; }
+  .flip-inner{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    transition: transform .6s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-inner{ transform: rotateY(180deg); }
+  .flip-front, .flip-back{
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid var(--ink);
+  }
+  .flip-back{
+    transform: rotateY(180deg);
+    background: var(--paper);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 14px;
+    text-align:center;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
   }
 
   footer{ padding: 40px 0 60px; border-top: 1px solid var(--line); }
@@ -261,9 +285,36 @@
     <div class="ec-group">
       <h3 class="ec-label">SASE</h3>
       <div class="photo-grid">
-        <div class="photo-placeholder"><img src="8F91A548-23FB-439A-8C79-DC0F943491F7_1_201_a.jpeg" alt="SASE"></div>
-        <div class="photo-placeholder"><img src="906B8165-9F42-444C-B876-F4F640993731_1_105_c.jpeg" alt="SASE"></div>
-        <div class="photo-placeholder"><img src="AB3D0729-B78F-44B8-947B-19C8A08F388C_1_201_a.jpeg" alt="SASE"></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="8F91A548-23FB-439A-8C79-DC0F943491F7_1_201_a.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="906B8165-9F42-444C-B876-F4F640993731_1_105_c.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="AB3D0729-B78F-44B8-947B-19C8A08F388C_1_201_a.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="ec-caption">Describe these SASE photos here</p>
     </div>
@@ -271,19 +322,73 @@
     <div class="ec-group">
       <h3 class="ec-label">Tennis</h3>
       <div class="photo-grid">
-        <div class="photo-placeholder"><img src="35AB836D-BCFD-4AE4-8760-4E51BD4B325F_1_201_a.jpeg" alt="Tennis"></div>
-        <div class="photo-placeholder"><img src="34E52816-A2CA-4E27-A2DB-96085AAA7EA5_1_105_c.jpeg" alt="Tennis"></div>
-        <div class="photo-placeholder"><img src="73285C63-27BD-420D-906B-B74B0D24F90F_1_201_a.jpeg" alt="Tennis"></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="35AB836D-BCFD-4AE4-8760-4E51BD4B325F_1_201_a.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="34E52816-A2CA-4E27-A2DB-96085AAA7EA5_1_105_c.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="73285C63-27BD-420D-906B-B74B0D24F90F_1_201_a.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="ec-caption">Through years of playing competitive tennis in both team and individual settings, I've developed the discipline and mental resilience that continue to shape how I approach challenges, collaboration, and personal growth today. </p>
+      <p class="ec-caption">Through years of playing competitive tennis in both team and individual settings, I've developed the discipline and mental resilience that continue to shape how I approach challenges, collaboration, and personal growth today.</p>
     </div>
 
     <div class="ec-group">
       <h3 class="ec-label">Photos</h3>
       <div class="photo-grid">
-        <div class="photo-placeholder">photo</div>
-        <div class="photo-placeholder">photo</div>
-        <div class="photo-placeholder">photo</div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder">photo</div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder">photo</div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder">photo</div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="ec-caption">Describe these photography shots here</p>
     </div>
