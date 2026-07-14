@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hobbies — Annie Wang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #C4D6FF;
+    --ink: #1B1A17;
+    --muted: #4A5570;
+    --line: #A9BEEF;
+    --pine: #2F4A44;
+    --gold: #B8860B;
+    --paper: #D8E3FF;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  header{
+    padding: 36px 0 28px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  nav{ display:flex; gap: 22px; }
+  nav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration:none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  nav a:hover, nav a.active{
+    color: var(--ink);
+    border-color: var(--pine);
+  }
+
+  section{ padding: 34px 0; }
+  section h2{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+  .hint{
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    margin: -6px 0 18px;
+  }
+
+  .photo-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 26px;
+  }
+  .photo-placeholder{
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+    color: var(--muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .photo-placeholder img{
+    width:100%; height:100%; object-fit: cover; display:block;
+  }
+
+  .ec-group{ margin-bottom: 32px; text-align: center; }
+  .ec-group:last-child{ margin-bottom: 0; }
+  .ec-label{
+    font-family:'Fraunces', serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  .ec-caption{
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .flip-card{ perspective: 1000px; cursor: pointer; }
+  .flip-inner{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    transition: transform .6s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-inner{ transform: rotateY(180deg); }
+  .flip-front, .flip-back{
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid var(--ink);
+  }
+  .flip-back{
+    transform: rotateY(180deg);
+    background: var(--paper);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 14px;
+    text-align:center;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  :focus-visible{ outline: 2px solid var(--pine); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="extracurriculars.html" class="active">Extracurriculars</a>
+    </nav>
+  </header>
+
+  <section id="hobbies">
+    <h2>Extracurriculars</h2>
+    <p class="hint">*click on photo for more!</p>
+
+    <div class="ec-group">
+      <h3 class="ec-label">SASE</h3>
+      <div class="photo-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="8F91A548-23FB-439A-8C79-DC0F943491F7_1_201_a.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="906B8165-9F42-444C-B876-F4F640993731_1_105_c.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="AB3D0729-B78F-44B8-947B-19C8A08F388C_1_201_a.jpeg" alt="SASE"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ec-caption">Describe these SASE photos here</p>
+    </div>
+
+    <div class="ec-group">
+      <h3 class="ec-label">Tennis</h3>
+      <div class="photo-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="35AB836D-BCFD-4AE4-8760-4E51BD4B325F_1_201_a.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="34E52816-A2CA-4E27-A2DB-96085AAA7EA5_1_105_c.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="73285C63-27BD-420D-906B-B74B0D24F90F_1_201_a.jpeg" alt="Tennis"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ec-caption">Through years of playing competitive tennis in both team and individual settings, I've developed the discipline and mental resilience that continue to shape how I approach challenges, collaboration, and personal growth today.</p>
+    </div>
+
+    <div class="ec-group">
+      <h3 class="ec-label">Photos</h3>
+      <div class="photo-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="4D3D0DE7-C991-4AFF-9091-43433BC8DDDC_1_201_a.jpeg" alt="Photography"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="E8F2B354-BC53-42D7-8CE0-8EF9DF4AF6C6_1_102_a.jpeg" alt="Photography"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="photo-placeholder"><img src="F539F9B4-A7A3-4C08-B4DA-8D20010652FA_1_102_a.jpeg" alt="Photography"></div>
+            </div>
+            <div class="flip-back">
+              <p>Write your note about this photo here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ec-caption">Describe these photography shots here</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
