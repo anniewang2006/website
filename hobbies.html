@@ -98,34 +98,20 @@
   }
 
   .collage{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 28px;
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 90px;
+    grid-auto-flow: dense;
+    gap: 4px;
     margin-top: 30px;
-    padding: 10px 0;
+    background: var(--bg);
+    padding: 4px;
+    border-radius: 6px;
   }
   .collage-item{
     position: relative;
-    width: 200px;
-    aspect-ratio: 4 / 3;
-    border-radius: 4px;
     overflow: hidden;
-    border: 6px solid #fff;
-    box-shadow: 0 8px 18px rgba(27,26,23,0.25);
-    transition: transform .25s ease, z-index 0s;
   }
-  .collage-item:hover{
-    transform: scale(1.06) rotate(0deg) !important;
-    z-index: 5;
-  }
-  .collage-item:nth-child(6n+1){ transform: rotate(-6deg); }
-  .collage-item:nth-child(6n+2){ transform: rotate(4deg); }
-  .collage-item:nth-child(6n+3){ transform: rotate(-3deg); }
-  .collage-item:nth-child(6n+4){ transform: rotate(5deg); }
-  .collage-item:nth-child(6n+5){ transform: rotate(-4deg); }
-  .collage-item:nth-child(6n+6){ transform: rotate(3deg); }
-
   .collage-item img{
     width:100%; height:100%; object-fit: cover; display:block;
   }
@@ -141,8 +127,35 @@
   }
   .collage-item:hover .caption-overlay{ opacity: 1; }
 
-  @media (max-width: 560px){
-    .collage-item{ width: 150px; }
+  .collage.sase-layout .collage-item:nth-child(1){ grid-column: span 3; grid-row: span 2; }
+  .collage.sase-layout .collage-item:nth-child(2){ grid-column: span 3; grid-row: span 1; }
+  .collage.sase-layout .collage-item:nth-child(3){ grid-column: span 2; grid-row: span 1; }
+  .collage.sase-layout .collage-item:nth-child(4){ grid-column: span 1; grid-row: span 2; }
+  .collage.sase-layout .collage-item:nth-child(5){ grid-column: span 2; grid-row: span 1; }
+  .collage.sase-layout .collage-item:nth-child(6){ grid-column: span 2; grid-row: span 2; }
+  .collage.sase-layout .collage-item:nth-child(7){ grid-column: span 2; grid-row: span 1; }
+  .collage.sase-layout .collage-item:nth-child(8){ grid-column: span 2; grid-row: span 1; }
+
+  .collage.tennis-layout .collage-item:nth-child(1){ grid-column: span 2; grid-row: span 1; }
+  .collage.tennis-layout .collage-item:nth-child(2){ grid-column: span 2; grid-row: span 2; }
+  .collage.tennis-layout .collage-item:nth-child(3){ grid-column: span 2; grid-row: span 1; }
+  .collage.tennis-layout .collage-item:nth-child(4){ grid-column: span 2; grid-row: span 1; }
+  .collage.tennis-layout .collage-item:nth-child(5){ grid-column: span 3; grid-row: span 1; }
+  .collage.tennis-layout .collage-item:nth-child(6){ grid-column: span 1; grid-row: span 2; }
+  .collage.tennis-layout .collage-item:nth-child(7){ grid-column: span 2; grid-row: span 1; }
+  .collage.tennis-layout .collage-item:nth-child(8){ grid-column: span 3; grid-row: span 1; }
+
+  .collage.photog-layout .collage-item:nth-child(1){ grid-column: span 2; grid-row: span 2; }
+  .collage.photog-layout .collage-item:nth-child(2){ grid-column: span 2; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(3){ grid-column: span 2; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(4){ grid-column: span 2; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(5){ grid-column: span 2; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(6){ grid-column: span 3; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(7){ grid-column: span 3; grid-row: span 1; }
+  .collage.photog-layout .collage-item:nth-child(8){ grid-column: span 2; grid-row: span 1; }
+
+  @media (max-width: 640px){
+    .collage{ grid-template-columns: repeat(3, 1fr); grid-auto-rows: 90px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -170,7 +183,7 @@
 
     <div class="ec-group">
       <h3 class="ec-label">SASE</h3>
-      <div class="collage">
+      <div class="collage sase-layout">
         <div class="collage-item"><img src="sase-1.jpeg" alt="SASE"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="sase-2.jpeg" alt="SASE"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="sase-3.jpeg" alt="SASE"><div class="caption-overlay"><p>Write your note here</p></div></div>
@@ -185,7 +198,7 @@
 
     <div class="ec-group">
       <h3 class="ec-label">Tennis</h3>
-      <div class="collage">
+      <div class="collage tennis-layout">
         <div class="collage-item"><img src="tennis-1.jpeg" alt="Tennis"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="tennis-2.jpeg" alt="Tennis"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="tennis-3.jpeg" alt="Tennis"><div class="caption-overlay"><p>Write your note here</p></div></div>
@@ -200,7 +213,7 @@
 
     <div class="ec-group">
       <h3 class="ec-label">Photos</h3>
-      <div class="collage">
+      <div class="collage photog-layout">
         <div class="collage-item"><img src="photog-1.jpeg" alt="Photography"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="photog-2.jpeg" alt="Photography"><div class="caption-overlay"><p>Write your note here</p></div></div>
         <div class="collage-item"><img src="photog-3.jpeg" alt="Photography"><div class="caption-overlay"><p>Write your note here</p></div></div>
