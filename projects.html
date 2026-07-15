@@ -80,8 +80,8 @@
   }
 
   .project-photo{
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    aspect-ratio: 4 / 3;
     flex-shrink: 0;
     border: 2px solid var(--ink);
     border-radius: 10px;
@@ -110,13 +110,18 @@
     margin: 0;
     font-size: 16px;
   }
+  .project-desc a{
+    color: var(--pine);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
   @media (max-width: 640px){
     .project-row, .project-row.reverse{
       flex-direction: column;
       align-items: flex-start;
     }
-    .project-photo{ width: 100%; height: auto; aspect-ratio: 4/3; }
+    .project-photo{ width: 100%; height: auto; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -134,8 +139,7 @@
     <nav>
       <a href="index.html">About</a>
       <a href="projects.html" class="active">Projects</a>
-      <a href="hobbies.html">Hobbies</a>
-    </nav>
+      <a href="extracurriculars.html">Hobbies</a>
     </nav>
   </header>
 
@@ -150,18 +154,19 @@
     </div>
 
     <div class="project-row reverse">
-      <div class="project-photo">photo</div>
+      <div class="project-photo"><img src="598ADAD5-2747-4B25-8A69-F231D1682CEF_1_201_a.jpg" alt="Robodog"></div>
       <div class="project-caption">
-        <p class="project-title">Project Two</p>
+        <p class="project-title">Robodog</p>
         <p class="project-desc">Describe what this project is, what you built, and what tools you used.</p>
       </div>
     </div>
 
     <div class="project-row">
-      <div class="project-photo">photo</div>
+      <div class="project-photo"><img src="1DE41D27-485F-47CD-A57B-069DB4F8A403_1_201_a.jpeg" alt="Reveille: After Hours"></div>
       <div class="project-caption">
-        <p class="project-title">Project Three</p>
+        <p class="project-title">Reveille: After Hours</p>
         <p class="project-desc">Describe what this project is, what you built, and what tools you used.</p>
+        <p class="project-desc"><a href="https://github.com/laurenkvu/Reveille-After-Hours" target="_blank" rel="noopener">View on GitHub</a></p>
       </div>
     </div>
 
